@@ -1,5 +1,52 @@
 <script>
-
+export default {
+  data() {
+    return {
+      links: [
+        {
+          text: "CHARACTERS",
+          url: "#CHARACTERS",
+        },
+        {
+          text: "COMICS",
+          url: "#COMICS",
+        },
+        {
+          text: "MOVIES",
+          url: "#MOVIES",
+        },
+        {
+          text: "TV",
+          url: "#TV",
+        },
+        {
+          text: "GAME",
+          url: "#GAME",
+        },
+        {
+          text: "COLLECTIBLES",
+          url: "#COLLECTIBLES",
+        },
+        {
+          text: "VIDEOS",
+          url: "#VIDEOS",
+        },
+        {
+          text: "FANS",
+          url: "#FANS",
+        },
+        {
+          text: "NEWS",
+          url: "#NEWS",
+        },
+        {
+          text: "SHOP",
+          url: "#SHOP",
+        },
+      ],
+    }
+  }
+}
 </script>
 
 <template>
@@ -9,8 +56,10 @@
     <div class="container">
 
       <div class="row">
-        <div class="col-6">Logo</div>
-        <div class="col-6">Link</div>
+        <div class="col"><img src="../../img/dc-logo.png" width="50px"></div>
+        <div class="col d-flex align-items-center">
+          <a v-for="link in links" :href="link.url">{{ link.text }}</a>
+        </div>
       </div>
 
     </div>
@@ -19,4 +68,15 @@
 
 </template>
 
-<style scoped></style>
+<style scoped>
+header {
+  background-color: white;
+  padding: 1rem;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+  padding: 0 0.5rem;
+}
+</style>
