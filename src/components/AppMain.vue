@@ -5,7 +5,13 @@
 <template>
 
     <main>
-        centro
+        <div class="container">
+
+            <div class="row">
+                <div class="col-12">main</div>
+            </div>
+
+        </div>
     </main>
 
 </template>
