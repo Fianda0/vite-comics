@@ -5,23 +5,23 @@ export default {
         return {
             info: [
                 {
-                    img: '../../img/buy-comics-digital-comics.png',
+                    img: 'buy-comics-digital-comics.png',
                     text: "DIGITAL COMICS",
                 },
                 {
-                    img: '../../img/buy-comics-merchandise.png',
+                    img: 'buy-comics-merchandise.png',
                     text: "DC MERCHANDISE",
                 },
                 {
-                    img: '../../img/buy-comics-subscriptions.png',
+                    img: 'buy-comics-subscriptions.png',
                     text: "SUBSCRIPTION",
                 },
                 {
-                    img: '../../img/buy-comics-shop-locator.png',
+                    img: 'buy-comics-shop-locator.png',
                     text: "COMIC SHOP LOCATOR",
                 },
                 {
-                    img: '../../img/buy-dc-power-visa.svg',
+                    img: 'buy-dc-power-visa.svg',
                     text: "DC POWER VISA",
                 },
             ],
@@ -71,26 +71,32 @@ export default {
 
             ],
             social: [
-                '../../img/footer-facebook.png',
-                '../../img/footer-twitter.png',
-                '../../img/footer-youtube.png',
-                '../../img/footer-pinterest.png',
-                '../../img/footer-periscope.png',
-            ]
-
+                'footer-facebook.png',
+                'footer-twitter.png',
+                'footer-youtube.png',
+                'footer-pinterest.png',
+                'footer-periscope.png',
+            ],
+           
+            
+        }
+    },
+    methods:{
+        getImg(percorso){
+            let risultato = new URL('../assets/' + percorso, import.meta.url);
+            return risultato.href
         }
     }
 }
 </script>
 <template>
-
     <footer>
         <div class="container-fluid bck-blu py-3">
             <div class="container">
 
                 <div class="row justify-content-around">
                     <div v-for="element in info" class="col d-flex align-items-center">
-                        <img :src="element.img">
+                        <img :src="getImg(element.img)">
                         <span>{{ element.text }}</span>
                     </div>
                 </div>
@@ -103,7 +109,7 @@ export default {
                 <div class="row">
                     <div class="col-6">
                         <div class="row">
-                            <div v-for="element, i in link" class="col">
+                            <div v-for="element, i in link" class="col-4">
                                 <h4>{{ element.nome }}</h4>
                                 <ul>
                                     <li v-for="voce, i in link[i].voci">{{ voce }}</li>
@@ -113,20 +119,19 @@ export default {
                         </div>
                     </div>
                     <div class="col-6 dc-bck">
-                        <img src="../../img/dc-logo-bg.png">
+                        <img src="../assets/dc-logo-bg.png">
                     </div>
 
                 </div>
             </div>
         </div>
-
-        <div class="container-fluid bck-grey py-2">
+        <div class="container-fluid bck-grey py-3">
             <div class="container">
                 <div class="row">
                     <div class="col-6"><Button>SIGN-UP NOW!</Button></div>
                     <div class="col-6 social d-flex align-items-center justify-content-end">
                         <a href="">FOLLOW US</a>
-                        <img v-for="element in social" :src="element">
+                        <img v-for="element in social" :src="getImg(element)">
                     </div>
                 </div>
             </div>
@@ -137,7 +142,7 @@ export default {
 
 <style scoped>
 footer {
-    background-image: url('../../img/footer-bg.jpg');
+    background-image: url('../assets/footer-bg.jpg');
     background-position: center;
     background-size: cover;
 }

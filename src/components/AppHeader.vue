@@ -45,7 +45,13 @@ export default {
         },
       ],
     }
-  }
+  },
+  methods:{
+        getImg(percorso){
+            let risultato = new URL('../assets/' + percorso, import.meta.url);
+            return risultato.href
+        }
+    }
 }
 </script>
 
@@ -56,7 +62,7 @@ export default {
     <div class="container">
 
       <div class="row">
-        <div class="col"><img src="../../img/dc-logo.png" width="50px"></div>
+        <div class="col"><img src="../assets/dc-logo.png" width="50px"></div>
         <div class="col d-flex align-items-center">
           <a v-for="link in links" :href="link.url">{{ link.text }}</a>
         </div>
