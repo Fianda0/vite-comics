@@ -7,13 +7,19 @@ export default {
 
 <template>
     <div class="col-2">
-        <img :src="element.thumb" alt="">
-        <p>{{ element.series }}</p>
+        <img :src="prodotto.thumb" alt="">
+        <p>{{ prodotto.series }}</p>
     </div>
 </template>
 
 <style>
 .productCard {
     width: 25%;
+}
+img{
+    width: 100%;
+    height: 50%;
+    object-fit: cover;
+    object-position: top;
 }
 </style>
