@@ -1,8 +1,15 @@
 <script>
+import ProductCard from './ProductCard.vue'
+
 export default {
-  data() {
-    return {
-        fumetti: [
+    
+    components:{
+        ProductCard
+    },
+
+    data() {
+        return {
+            fumetti: [
                 {           
                     thumb: "https://www.coverbrowser.com/image/action-comics/1-1.jpg",
                     price: "$19.99",
@@ -96,10 +103,12 @@ export default {
 
         <div class="container py-3">
             <div class="row">
-                <div v-for="element in fumetti" class="col-2">
+                <!-- <div v-for="element in fumetti" class="col-2">
                     <img :src="element.thumb" alt="">
                     <p>{{ element.series }}</p>
-                </div>
+                </div> -->
+
+                <ProductCard v-for="element in fumetti" :prodotto="element"/>
             </div>
         </div>
 
